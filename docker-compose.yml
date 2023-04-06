@@ -1,0 +1,17 @@
+services:
+  mysql:
+    container_name: spring-batch-mysql
+    image: mysql:8.0.32
+    volumes:
+      - spring-batch-mysql:/var/lib/mysql
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: pass
+      MYSQL_DATABASE: springbatch
+    command:
+      - --character-set-server=utf8mb4
+      - --collation-server=utf8mb4_unicode_ci
+volumes:
+  spring-batch-mysql:
+
